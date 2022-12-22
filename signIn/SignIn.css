@@ -71,6 +71,7 @@
 }
 .signInLine
 {
+    padding-top: 20px;
     color: #847f81;
 }
 .signInWith
@@ -99,4 +100,6 @@
     color: #cc1818;
     font-size: 16px;
     height: 13px;
+    text-align: start;
+    padding-bottom: 10px;
 }
