@@ -14,11 +14,6 @@
         </style>
     </head>
     <body>
-
-
-        <script src="SignIn.js"></script> 
-
-
            <div class ='parent'>
                <img src="../signIn/Logo.png" alt="OUR LOGO" width="150px"/>
            </div>
@@ -30,17 +25,17 @@
                 <div class="div2">
                   <p class='p1'>Welcome to Sales!</p>
                   <p class='p2'>Sign in</p>
-
-                  <form name="myform" onsubmit="return validateemail();" method="post" target="_Blank" action ="../home/home.html"  > 
-                    <p>
-                        <input type="email" name="email" class="email" placeholder='E-mail'  required /><br/>
-
-                        <input type="password" name="password" class="password" placeholder='password'  required/><br/> 
-                        <input type="submit" name="sign in" value="Sign in"  class="button"/>
-                        
-                     
+                  <form id="form" method="post" target="_Blank" action ="../home/home.html"  > 
+                    <div class="input-control">
+                        <input type="email" id="email" name="email" placeholder='E-mail'/><br/>
+                        <div class="error"></div>
+                    </div>
+                    <div class="input-control">
+                        <input type="password" id="password" name="password" placeholder='password'/><br/> 
+                        <div class="error"></div>
+                    </div>
+                        <input type="submit" value="Sign in" class="button"/>
                         <br/>
-                    </p>
                   </form>
                 <div class='div4'>
                     <pre class='signInLine'>_________________________________  Or sign in with  _________________________________</pre>
@@ -60,6 +55,7 @@
                </div>
            </center>
     </body>
+    <script src="SignIn.js"></script> 
 </html>
 
 
