@@ -1,3 +1,3 @@
 # Online_shopping
-front end only,
+web design,
 sign in then enjoy shopping!
