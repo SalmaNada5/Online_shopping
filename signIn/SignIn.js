@@ -1,17 +1,20 @@
-
+//save references for the form, and the input fields email and password.
 const form = document.getElementById('form');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 
+//helper function to set the error state of the input control.
 const setError = (element, message) => {
+    //getting the input element in the specific input-control so we get the input element parent div 
     const inputControl = element.parentElement;
+    //we here gather the error div and save it in errorDisplay var by quering the input control with the error class.
     const errorDisplay = inputControl.querySelector('.error');
 
     errorDisplay.innerText = message;
     inputControl.classList.add('error');
     inputControl.classList.remove('success')
 }
-
+//helper function to set the success state of the input control.
 const setSuccess = element => {
     const inputControl = element.parentElement;
     const errorDisplay = inputControl.querySelector('.error');
@@ -20,17 +23,18 @@ const setSuccess = element => {
     inputControl.classList.add('success');
     inputControl.classList.remove('error');
 };
-
+//helper function to validate email using the string.test() function to test the string against regex
 const isValidEmail = email => {
-    const e = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return e.test(String(email).toLowerCase());
+    const regEx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return regEx.test(String(email).toLowerCase());
 }
-
-
+//the validator
 const validateInputs = () => {
+    //getting the value of input fields.
     const validPass = false;
-const emailValue = email.value.trim();
-const passwordValue = password.value.trim();
+    const emailValue = email.value.trim();
+    const passwordValue = password.value.trim();
+
     if(emailValue == '') {
         setError(email, 'Email is required');
     } else if (!isValidEmail(emailValue)) {
@@ -53,7 +57,7 @@ const passwordValue = password.value.trim();
         return false;
     }
 };
-
+//To prevent the form for automatically submit we have to attach and event listener to our form's submit event.
 form.addEventListener("submit", e => {
     const formValid = validateInputs();
     if(!formValid){
@@ -61,9 +65,7 @@ form.addEventListener("submit", e => {
     }
 });
 
-
-
-//validation in seperated function
+//validation in seperated functions
 
 // function validateEmail()  
 // {  
