@@ -234,3 +234,29 @@ form{
     font-family: 'Roboto', sans-serif;
 
 }
+
+#dialogoverlay{
+
+	display: none;
+	opacity: .8;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: rgb(255, 253, 253);
+	width: 100%;
+	z-index: 10;
+}
+#dialogbox{
+    flex-direction: column;
+    justify-content: center;
+	display: none;
+    z-index: 10;
+	position: fixed;
+	background:  #ffa8a7;
+	border-radius:10px; 
+	width:600;
+}
+#dialogbox > div{ background:#FFF; margin:8px; }
+#dialogbox > div > #dialogboxhead{ background: rgb(255, 252, 252); font-size:19px; padding:10px; color:#CCC; }
+#dialogbox > div > #dialogboxbody{ background:rgb(255, 255, 255); padding:20px; color:rgb(0, 0, 0);text-align: center;font-size: 30; }
+#dialogbox > div > #dialogboxfoot{ background: rgb(255, 255, 255); padding:20px; text-align:center; }
